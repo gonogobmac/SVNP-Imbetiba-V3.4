@@ -1,0 +1,34 @@
+[
+  {
+    "id": "lmx0iw0o4bq7",
+    "name": "PSV Commander",
+    "category": "A",
+    "loa": 86.0,
+    "draft": 6.5,
+    "beam": 19.0
+  },
+  {
+    "id": "lmx0iw0p9x2c",
+    "name": "AHTS Neptune",
+    "category": "B",
+    "loa": 78.5,
+    "draft": 6.2,
+    "beam": 18.0
+  },
+  {
+    "id": "lmx0iw0qs8r1",
+    "name": "OSRV Sentinel",
+    "category": "C",
+    "loa": 62.0,
+    "draft": 4.8,
+    "beam": 14.0
+  },
+  {
+    "id": "lmx0iw0s3zfj",
+    "name": "Tanker Horizon",
+    "category": "Tanque",
+    "loa": 120.0,
+    "draft": 7.8,
+    "beam": 22.0
+  }
+]
