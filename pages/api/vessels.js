@@ -1,150 +1,153 @@
 // pages/api/vessels.js
 
-import { Buffer } from "buffer";
-
 const token = process.env.GITHUB_TOKEN;
-const repo = process.env.GITHUB_REPO; // ex: "seuUsuario/seuRepositorio"
-const filePath = process.env.GITHUB_FILE_PATH; // ex: "data/vessels.json"
+const repo = process.env.GITHUB_REPO; // Ex: "seu-usuario/seu-repo"
+const filePath = process.env.GITHUB_FILE_PATH || "data/vessels.json";
 
-const GH_API_BASE = "https://api.github.com";
-
-function ensureEnvOk() {
-  if (!token || !repo || !filePath) {
-    throw new Error(
-      "Environment variables faltando. Verifique GITHUB_TOKEN, GITHUB_REPO e GITHUB_FILE_PATH."
-    );
-  }
+if (!token || !repo || !filePath) {
+  console.warn(
+    "[/api/vessels] Variáveis de ambiente ausentes. " +
+      "Defina GITHUB_TOKEN, GITHUB_REPO e GITHUB_FILE_PATH."
+  );
 }
 
-function parseRepo(repoStr) {
-  const [owner, repoName] = (repoStr || "").split("/");
-  if (!owner || !repoName) {
+/**
+ * Lê o arquivo de embarcações no GitHub.
+ * Retorna { data: [], sha: string | null }
+ */
+async function readFromGitHub() {
+  if (!token || !repo || !filePath) {
+    return { data: [], sha: null, error: "Env vars not configured" };
+  }
+
+  const url = `https://api.github.com/repos/${repo}/contents/${filePath}`;
+
+  const res = await fetch(url, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: "application/vnd.github+json",
+    },
+  });
+
+  if (res.status === 404) {
+    // Arquivo ainda não existe → retorna base vazia
+    return { data: [], sha: null };
+  }
+
+  if (!res.ok) {
+    const text = await res.text();
+    console.error("[readFromGitHub] Erro HTTP:", res.status, text);
+    throw new Error(`GitHub GET failed: ${res.status}`);
+  }
+
+  const json = await res.json();
+
+  if (!json.content) {
+    console.error("[readFromGitHub] Resposta sem 'content':", json);
+    throw new Error("Invalid GitHub response (no content)");
+  }
+
+  const buff = Buffer.from(json.content, json.encoding || "base64");
+  let data;
+  try {
+    data = JSON.parse(buff.toString("utf8"));
+  } catch (e) {
+    console.error("[readFromGitHub] Falha ao parsear JSON:", e);
+    data = [];
+  }
+
+  return { data, sha: json.sha || null };
+}
+
+/**
+ * Escreve o arquivo de embarcações no GitHub.
+ * payloadData → array de embarcações
+ * sha         → sha atual (ou null se arquivo novo)
+ */
+async function writeToGitHub(payloadData, sha) {
+  if (!token || !repo || !filePath) {
+    throw new Error("Env vars not configured");
+  }
+
+  const url = `https://api.github.com/repos/${repo}/contents/${filePath}`;
+
+  const content = Buffer.from(
+    JSON.stringify(payloadData, null, 2),
+    "utf8"
+  ).toString("base64");
+
+  const body = {
+    message: "chore: update SVNP vessels database",
+    content,
+    committer: {
+      name: "SVNP-Imbetiba Bot",
+      email: "svnp-bot@example.com",
+    },
+  };
+
+  if (sha) {
+    // Atualização de arquivo existente
+    body.sha = sha;
+  }
+
+  const res = await fetch(url, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: "application/vnd.github+json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+
+  const json = await res.json().catch(() => ({}));
+
+  if (!res.ok) {
+    console.error("[writeToGitHub] Erro HTTP:", res.status, json);
     throw new Error(
-      "GITHUB_REPO inválido. Use o formato 'owner/repo', ex: 'felippe/svnp-imbetiba'"
+      json.message || `GitHub PUT failed: ${res.status}`
     );
   }
-  return { owner, repoName };
+
+  const newSha = json.content?.sha || null;
+  return { sha: newSha };
 }
 
 export default async function handler(req, res) {
   try {
-    ensureEnvOk();
+    if (req.method === "GET") {
+      const result = await readFromGitHub();
+      return res.status(200).json({
+        data: Array.isArray(result.data) ? result.data : [],
+        sha: result.sha || null,
+      });
+    }
+
+    if (req.method === "PUT") {
+      const { data, sha } = req.body || {};
+
+      if (!Array.isArray(data)) {
+        return res
+          .status(400)
+          .json({ error: "Campo 'data' deve ser um array de embarcações." });
+      }
+
+      const writeResult = await writeToGitHub(data, sha || null);
+
+      return res.status(200).json({
+        ok: true,
+        sha: writeResult.sha,
+      });
+    }
+
+    // Outros métodos não permitidos
+    res.setHeader("Allow", ["GET", "PUT"]);
+    return res.status(405).json({ error: "Method Not Allowed" });
   } catch (err) {
-    console.error("[/api/vessels] ERRO ENV:", err.message);
-    return res.status(500).json({ error: err.message });
+    console.error("[/api/vessels] Erro geral:", err);
+    return res.status(500).json({
+      error: err.message || "Erro interno na API de vessels.",
+    });
   }
-
-  const { owner, repoName } = parseRepo(repo);
-
-  if (req.method === "GET") {
-    try {
-      const ghRes = await fetch(
-        `${GH_API_BASE}/repos/${owner}/${repoName}/contents/${encodeURIComponent(
-          filePath
-        )}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            Accept: "application/vnd.github+json",
-          },
-          cache: "no-store",
-        }
-      );
-
-      // Se o arquivo não existir ainda, devolve base vazia
-      if (ghRes.status === 404) {
-        return res.status(200).json({ data: [], sha: null });
-      }
-
-      if (!ghRes.ok) {
-        const text = await ghRes.text();
-        console.error("[/api/vessels] GET GitHub error:", ghRes.status, text);
-        return res.status(ghRes.status).json({
-          error: "Falha ao ler arquivo no GitHub",
-          details: text,
-        });
-      }
-
-      const ghJson = await ghRes.json();
-      const { content, sha } = ghJson;
-
-      let data = [];
-      try {
-        const decoded = Buffer.from(content, "base64").toString("utf8");
-        data = JSON.parse(decoded);
-        if (!Array.isArray(data)) {
-          console.warn(
-            "[/api/vessels] Conteúdo não é um array. Forçando array vazio."
-          );
-          data = [];
-        }
-      } catch (err) {
-        console.error("[/api/vessels] Erro ao decodificar/parsing JSON:", err);
-        // Se der erro de parse, melhor retornar vazio mas com aviso
-        return res.status(500).json({
-          error: "Erro ao interpretar JSON do GitHub",
-          details: err.message,
-        });
-      }
-
-      return res.status(200).json({ data, sha: sha || null });
-    } catch (err) {
-      console.error("[/api/vessels] GET error:", err);
-      return res.status(500).json({ error: "Erro interno no GET" });
-    }
-  }
-
-  if (req.method === "PUT") {
-    try {
-      const body = req.body || {};
-      const data = Array.isArray(body.data) ? body.data : [];
-      const incomingSha = body.sha || null;
-
-      // Monta o conteúdo em base64
-      const content = Buffer.from(
-        JSON.stringify(data, null, 2),
-        "utf8"
-      ).toString("base64");
-
-      const ghRes = await fetch(
-        `${GH_API_BASE}/repos/${owner}/${repoName}/contents/${encodeURIComponent(
-          filePath
-        )}`,
-        {
-          method: "PUT",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            Accept: "application/vnd.github+json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            message: "Update vessels via SVNP-Imbetiba",
-            content,
-            // Se não tiver SHA, o GitHub cria o arquivo
-            ...(incomingSha ? { sha: incomingSha } : {}),
-          }),
-        }
-      );
-
-      if (!ghRes.ok) {
-        const text = await ghRes.text();
-        console.error("[/api/vessels] PUT GitHub error:", ghRes.status, text);
-        return res.status(ghRes.status).json({
-          error: "Falha ao salvar arquivo no GitHub",
-          details: text,
-        });
-      }
-
-      const ghJson = await ghRes.json();
-      const newSha = ghJson.content?.sha || null;
-
-      return res.status(200).json({ ok: true, sha: newSha });
-    } catch (err) {
-      console.error("[/api/vessels] PUT error:", err);
-      return res.status(500).json({ error: "Erro interno no PUT" });
-    }
-  }
-
-  res.setHeader("Allow", ["GET", "PUT"]);
-  return res.status(405).json({ error: "Method not allowed" });
 }
