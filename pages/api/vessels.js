@@ -1,9 +1,17 @@
+// pages/api/vessels.js
+
+// Garante que essa API rode no runtime Node.js da Vercel
+export const config = {
+  runtime: "nodejs",
+};
+
 const token = process.env.GITHUB_TOKEN;
 const repo = process.env.GITHUB_REPO;
 const filePath = process.env.GITHUB_FILE_PATH;
 const branch = process.env.GITHUB_BRANCH || "main";
 
 export default async function handler(req, res) {
+  // Validação básica de env vars
   if (!token || !repo || !filePath) {
     return res.status(500).json({
       error:
@@ -11,6 +19,9 @@ export default async function handler(req, res) {
     });
   }
 
+  // -------------------------------
+  // GET — LER VESSELS DO GITHUB
+  // -------------------------------
   if (req.method === "GET") {
     const url = `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branch}`;
 
@@ -36,7 +47,13 @@ export default async function handler(req, res) {
 
       const json = await githubRes.json();
       const decoded = Buffer.from(json.content, "base64").toString("utf8");
-      const parsed = JSON.parse(decoded);
+
+      let parsed = [];
+      try {
+        parsed = JSON.parse(decoded);
+      } catch {
+        parsed = [];
+      }
 
       return res.status(200).json({
         data: parsed,
@@ -50,12 +67,15 @@ export default async function handler(req, res) {
     }
   }
 
+  // -------------------------------
+  // PUT — SALVAR VESSELS NO GITHUB
+  // -------------------------------
   if (req.method === "PUT") {
     try {
       const { data, sha } = req.body || {};
 
       const encodedContent = Buffer.from(
-        JSON.stringify(data, null, 2)
+        JSON.stringify(data || [], null, 2)
       ).toString("base64");
 
       const url = `https://api.github.com/repos/${repo}/contents/${filePath}`;
@@ -96,6 +116,6 @@ export default async function handler(req, res) {
     }
   }
 
-  // Método não permitido
+  // Qualquer outro método → 405
   return res.status(405).json({ error: "Method not allowed" });
 }
