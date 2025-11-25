@@ -1,87 +1,115 @@
-export default async function handler(req, res) {
-  const {
-    GITHUB_TOKEN,
-    GITHUB_OWNER,
-    GITHUB_REPO,
-    GITHUB_PATH = "data/vessels.json",
-  } = process.env;
+import { NextRequest } from "next/server";
 
-  if (!GITHUB_TOKEN || !GITHUB_OWNER || !GITHUB_REPO) {
-    return res
-      .status(500)
-      .json({ error: "Configuração GitHub ausente no servidor." });
+const token = process.env.GITHUB_TOKEN;
+const repo = process.env.GITHUB_REPO;
+const filePath = process.env.GITHUB_FILE_PATH;
+const branch = process.env.GITHUB_BRANCH || "main";
+
+// -------------------------------
+// GET — LER VESSELS DO GITHUB
+// -------------------------------
+export async function GET() {
+  if (!token || !repo || !filePath) {
+    return Response.json(
+      {
+        error:
+          "Variáveis de ambiente ausentes. Defina GITHUB_TOKEN, GITHUB_REPO e GITHUB_FILE_PATH.",
+      },
+      { status: 500 }
+    );
   }
 
-  const apiBase = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_PATH}`;
+  const url = `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branch}`;
 
   try {
-    if (req.method === "GET") {
-      const ghRes = await fetch(apiBase, {
-        headers: {
-          Authorization: `Bearer ${GITHUB_TOKEN}`,
-          Accept: "application/vnd.github+json",
-        },
-      });
+    const githubRes = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/vnd.github+json",
+      },
+    });
 
-      if (ghRes.status === 404) {
-        // Se ainda não existir o arquivo, devolve base vazia
-        return res.status(200).json({ data: [], sha: null });
-      }
-
-      if (!ghRes.ok) {
-        const txt = await ghRes.text();
-        return res
-          .status(ghRes.status)
-          .json({ error: "Erro GitHub GET", details: txt });
-      }
-
-      const json = await ghRes.json();
-      const content = Buffer.from(json.content, "base64").toString("utf8");
-      const data = JSON.parse(content);
-
-      return res.status(200).json({ data, sha: json.sha });
+    if (githubRes.status === 404) {
+      // Arquivo ainda não existe → retorna lista vazia
+      return Response.json({ data: [], sha: null });
     }
 
-    if (req.method === "PUT") {
-      const { data, sha } = req.body; // data = vesselDB (array)
-
-      const content = Buffer.from(JSON.stringify(data, null, 2)).toString(
-        "base64"
-      );
-
-      const ghRes = await fetch(apiBase, {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${GITHUB_TOKEN}`,
-          Accept: "application/vnd.github+json",
-        },
-        body: JSON.stringify({
-          message: "Atualização da base de embarcações (SVNP)",
-          content,
-          sha: sha || undefined, // se null/undefined, GitHub cria o arquivo
-        }),
-      });
-
-      if (!ghRes.ok) {
-        const txt = await ghRes.text();
-        return res
-          .status(ghRes.status)
-          .json({ error: "Erro GitHub PUT", details: txt });
-      }
-
-      const json = await ghRes.json();
-
-      return res.status(200).json({
-        ok: true,
-        sha: json.content.sha,
-      });
+    if (!githubRes.ok) {
+      throw new Error(`Erro ao acessar: ${githubRes.status}`);
     }
 
-    return res.status(405).json({ error: "Método não permitido" });
+    const json = await githubRes.json();
+
+    const decoded = Buffer.from(json.content, "base64").toString("utf8");
+    const parsed = JSON.parse(decoded);
+
+    return Response.json({
+      data: parsed,
+      sha: json.sha,
+    });
   } catch (err) {
-    console.error(err);
-    return res
-      .status(500)
-      .json({ error: "Erro inesperado", details: String(err) });
+    console.error("Erro GET /api/vessels:", err);
+    return Response.json(
+      { error: "Erro ao acessar o repositório no GitHub." },
+      { status: 500 }
+    );
+  }
+}
+
+// -------------------------------
+// PUT — SALVAR VESSELS NO GITHUB
+// -------------------------------
+export async function PUT(req: NextRequest) {
+  if (!token || !repo || !filePath) {
+    return Response.json(
+      {
+        error:
+          "Variáveis de ambiente ausentes. Defina GITHUB_TOKEN, GITHUB_REPO e GITHUB_FILE_PATH.",
+      },
+      { status: 500 }
+    );
+  }
+
+  try {
+    const { data, sha } = await req.json();
+
+    const encodedContent = Buffer.from(
+      JSON.stringify(data, null, 2)
+    ).toString("base64");
+
+    const url = `https://api.github.com/repos/${repo}/contents/${filePath}`;
+
+    const githubRes = await fetch(url, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/vnd.github+json",
+      },
+      body: JSON.stringify({
+        message: "Update vessels database from SVNP-Imbetiba",
+        content: encodedContent,
+        sha: sha || null, // Se null → cria o arquivo no GitHub
+        branch,
+      }),
+    });
+
+    if (!githubRes.ok) {
+      const errorText = await githubRes.text();
+      console.error("Erro GitHub:", errorText);
+      throw new Error("Falha ao salvar no GitHub");
+    }
+
+    const json = await githubRes.json();
+
+    return Response.json({
+      ok: true,
+      sha: json.content.sha,
+    });
+  } catch (err) {
+    console.error("Erro PUT /api/vessels:", err);
+    return Response.json(
+      { error: "Erro ao salvar dados no GitHub." },
+      { status: 500 }
+    );
   }
 }
