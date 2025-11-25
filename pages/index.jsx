@@ -10,6 +10,7 @@ import React, { useState, useMemo, useEffect } from "react";
  * ✔ Cada posição avaliada individualmente com base nas condições meteoceanográficas
  * ✔ Nota Técnica de NO-GO por embarcação/posição, renderizada em tela
  * ✔ Integração manual com GitHub (Importar / Salvar) na aba de Base
+ * ✔ Botão "Editar" na Base, com modal de edição e salvar automático no GitHub
  */
 
 // ------------------- Regras -------------------
@@ -117,6 +118,7 @@ export default function Component() {
   // Controle GitHub
   const [githubSha, setGithubSha] = useState(null);
   const [syncStatus, setSyncStatus] = useState("idle"); // idle | loading | saving | ok | error
+  const [syncError, setSyncError] = useState("");
 
   // Aba ativa: "go" ou "cadastro"
   const [activeTab, setActiveTab] = useState("go");
@@ -205,29 +207,47 @@ export default function Component() {
   async function importFromGitHub() {
     try {
       setSyncStatus("loading");
+      setSyncError("");
+
       const res = await fetch("/api/vessels");
-      if (!res.ok) throw new Error("Falha ao ler /api/vessels");
-      const json = await res.json();
-      if (Array.isArray(json.data)) {
-        setVesselDB(json.data);
-        setGithubSha(json.sha || null);
-        setSyncStatus("ok");
-        try {
-          localStorage.setItem("svnp_vessels_v3", JSON.stringify(json.data));
-        } catch {}
-      } else {
+      const json = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        console.error("Erro ao importar do GitHub (HTTP):", res.status, json);
         setSyncStatus("error");
+        setSyncError(
+          json.error ||
+            json.message ||
+            `HTTP ${res.status} ao tentar ler /api/vessels`
+        );
+        return;
       }
+
+      if (!Array.isArray(json.data)) {
+        console.error("JSON inesperado em /api/vessels:", json);
+        setSyncStatus("error");
+        setSyncError("Resposta inválida da API: 'data' não é um array.");
+        return;
+      }
+
+      setVesselDB(json.data);
+      setGithubSha(json.sha || null);
+      setSyncStatus("ok");
+      try {
+        localStorage.setItem("svnp_vessels_v3", JSON.stringify(json.data));
+      } catch {}
     } catch (err) {
-      console.error("Erro ao importar do GitHub:", err);
+      console.error("Erro ao importar do GitHub (catch):", err);
       setSyncStatus("error");
+      setSyncError(err.message || "Erro desconhecido ao importar");
     }
   }
 
-  // 🔧 Ajustado para aceitar um dataset opcional (para o fluxo de edição)
   async function saveToGitHub(dataOverride) {
     try {
       setSyncStatus("saving");
+      setSyncError("");
+
       const payload = Array.isArray(dataOverride) ? dataOverride : vesselDB;
 
       const res = await fetch("/api/vessels", {
@@ -236,14 +256,25 @@ export default function Component() {
         body: JSON.stringify({ data: payload, sha: githubSha }),
       });
 
-      if (!res.ok) throw new Error("Falha ao salvar /api/vessels");
+      const json = await res.json().catch(() => ({}));
 
-      const json = await res.json();
+      if (!res.ok) {
+        console.error("Erro ao salvar no GitHub (HTTP):", res.status, json);
+        setSyncStatus("error");
+        setSyncError(
+          json.error ||
+            json.message ||
+            `HTTP ${res.status} ao tentar salvar /api/vessels`
+        );
+        return;
+      }
+
       if (json.sha) setGithubSha(json.sha);
       setSyncStatus("ok");
     } catch (err) {
-      console.error("Erro ao salvar no GitHub:", err);
+      console.error("Erro ao salvar no GitHub (catch):", err);
       setSyncStatus("error");
+      setSyncError(err.message || "Erro desconhecido ao salvar");
     }
   }
 
@@ -476,20 +507,10 @@ export default function Component() {
                               key={v.id}
                               type="button"
                               onClick={() => {
-                                // Garante exclusividade: um barco em apenas um slot
-                                setBerthAssignments((prev) => {
-                                  const next = { ...prev };
-
-                                  Object.keys(next).forEach((slotKey) => {
-                                    if (next[slotKey] === v.id) {
-                                      next[slotKey] = "";
-                                    }
-                                  });
-
-                                  next[slot.id] = v.id;
-                                  return next;
-                                });
-
+                                setBerthAssignments((prev) => ({
+                                  ...prev,
+                                  [slot.id]: v.id,
+                                }));
                                 setBerthSearch((prev) => ({
                                   ...prev,
                                   [slot.id]: v.name,
@@ -710,6 +731,11 @@ export default function Component() {
             </div>
             <div className="flex flex-col items-end gap-1 text-[10px]">
               <span className="text-gray-500">{syncLabel}</span>
+              {syncStatus === "error" && syncError && (
+                <span className="text-red-600 max-w-xs text-right">
+                  {syncError}
+                </span>
+              )}
               <div className="flex gap-1">
                 <button
                   type="button"
@@ -791,7 +817,6 @@ export default function Component() {
                             Usar no GO/NO-GO
                           </button>
 
-                          {/* 🔧 NOVO BOTÃO EDITAR */}
                           <button
                             type="button"
                             onClick={() => {
@@ -805,7 +830,7 @@ export default function Component() {
                               });
                               setShowEditModal(true);
                             }}
-                            className="rounded-md border px-2 py-1 text-[10px] text-blue-700"
+                            className="rounded-md border px-2 py-1 text-[10px]"
                           >
                             Editar
                           </button>
@@ -960,14 +985,12 @@ export default function Component() {
             </div>
           )}
 
-          {/* 🔧 Popup de Editar Embarcação */}
+          {/* Popup de Editar Embarcação */}
           {showEditModal && editVessel && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
               <div className="w-[min(420px,95vw)] rounded-2xl bg-white p-4 shadow-xl space-y-3">
                 <div className="flex items-center justify-between mb-1">
-                  <h3 className="text-sm font-semibold">
-                    Editar embarcação — {editVessel.name}
-                  </h3>
+                  <h3 className="text-sm font-semibold">Editar embarcação</h3>
                   <button
                     type="button"
                     onClick={() => {
@@ -980,8 +1003,7 @@ export default function Component() {
                   </button>
                 </div>
                 <p className="text-[11px] text-gray-500">
-                  Ajuste os dados da embarcação e clique em{" "}
-                  <strong>Salvar alterações</strong>. As mudanças serão gravadas e enviadas
+                  Ajuste os dados da embarcação e, ao salvar, o sistema atualizará a base e enviará
                   automaticamente para o GitHub.
                 </p>
 
@@ -994,6 +1016,7 @@ export default function Component() {
                         setEditVessel((prev) => ({ ...prev, name: e.target.value }))
                       }
                       className="mt-1 w-full border rounded-lg p-2 text-sm"
+                      placeholder="Nome da embarcação"
                     />
                   </div>
 
@@ -1026,10 +1049,7 @@ export default function Component() {
                         step="0.1"
                         value={editVessel.loa}
                         onChange={(e) =>
-                          setEditVessel((prev) => ({
-                            ...prev,
-                            loa: e.target.value,
-                          }))
+                          setEditVessel((prev) => ({ ...prev, loa: e.target.value }))
                         }
                         className="mt-1 w-full border rounded-lg p-2 text-sm"
                       />
@@ -1041,10 +1061,7 @@ export default function Component() {
                         step="0.1"
                         value={editVessel.draft}
                         onChange={(e) =>
-                          setEditVessel((prev) => ({
-                            ...prev,
-                            draft: e.target.value,
-                          }))
+                          setEditVessel((prev) => ({ ...prev, draft: e.target.value }))
                         }
                         className="mt-1 w-full border rounded-lg p-2 text-sm"
                       />
@@ -1056,10 +1073,7 @@ export default function Component() {
                         step="0.1"
                         value={editVessel.beam}
                         onChange={(e) =>
-                          setEditVessel((prev) => ({
-                            ...prev,
-                            beam: e.target.value,
-                          }))
+                          setEditVessel((prev) => ({ ...prev, beam: e.target.value }))
                         }
                         className="mt-1 w-full border rounded-lg p-2 text-sm"
                       />
@@ -1080,37 +1094,37 @@ export default function Component() {
                   </button>
                   <button
                     type="button"
-                    onClick={async () => {
-                      if (!editVessel || !editVessel.id) return;
+                    onClick={() => {
+                      if (!editVessel) return;
+                      const trimmedName = editVessel.name.trim();
+                      if (!trimmedName) return;
 
-                      const updatedList = vesselDB.map((v) =>
-                        v.id === editVessel.id
-                          ? {
-                              ...v,
-                              name: editVessel.name.trim(),
-                              category: editVessel.category,
-                              loa:
-                                editVessel.loa !== "" && editVessel.loa !== null
-                                  ? Number(editVessel.loa)
-                                  : undefined,
-                              draft:
-                                editVessel.draft !== "" && editVessel.draft !== null
-                                  ? Number(editVessel.draft)
-                                  : undefined,
-                              beam:
-                                editVessel.beam !== "" && editVessel.beam !== null
-                                  ? Number(editVessel.beam)
-                                  : undefined,
-                            }
-                          : v
+                      const updated = {
+                        ...editVessel,
+                        name: trimmedName,
+                        loa:
+                          editVessel.loa !== "" && editVessel.loa != null
+                            ? Number(editVessel.loa)
+                            : undefined,
+                        draft:
+                          editVessel.draft !== "" && editVessel.draft != null
+                            ? Number(editVessel.draft)
+                            : undefined,
+                        beam:
+                          editVessel.beam !== "" && editVessel.beam != null
+                            ? Number(editVessel.beam)
+                            : undefined,
+                      };
+
+                      const next = vesselDB.map((v) =>
+                        v.id === updated.id ? { ...v, ...updated } : v
                       );
 
-                      setVesselDB(updatedList);
+                      setVesselDB(next);
                       setShowEditModal(false);
                       setEditVessel(null);
-
-                      // Salva imediatamente no GitHub com a lista já atualizada
-                      await saveToGitHub(updatedList);
+                      // salva automaticamente no GitHub com a base atualizada
+                      saveToGitHub(next);
                     }}
                     className="rounded-md border px-3 py-1.5 text-xs bg-black text-white"
                   >
