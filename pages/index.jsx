@@ -134,6 +134,10 @@ export default function Component() {
     beam: "",
   });
 
+  // Modal de "Editar embarcação"
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [editVessel, setEditVessel] = useState(null); // {id,name,category,loa,draft,beam}
+
   // Carrega base do localStorage (cache local inicial)
   useEffect(() => {
     try {
@@ -220,13 +224,16 @@ export default function Component() {
     }
   }
 
-  async function saveToGitHub() {
+  // 🔧 Ajustado para aceitar um dataset opcional (para o fluxo de edição)
+  async function saveToGitHub(dataOverride) {
     try {
       setSyncStatus("saving");
+      const payload = Array.isArray(dataOverride) ? dataOverride : vesselDB;
+
       const res = await fetch("/api/vessels", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data: vesselDB, sha: githubSha }),
+        body: JSON.stringify({ data: payload, sha: githubSha }),
       });
 
       if (!res.ok) throw new Error("Falha ao salvar /api/vessels");
@@ -469,10 +476,20 @@ export default function Component() {
                               key={v.id}
                               type="button"
                               onClick={() => {
-                                setBerthAssignments((prev) => ({
-                                  ...prev,
-                                  [slot.id]: v.id,
-                                }));
+                                // Garante exclusividade: um barco em apenas um slot
+                                setBerthAssignments((prev) => {
+                                  const next = { ...prev };
+
+                                  Object.keys(next).forEach((slotKey) => {
+                                    if (next[slotKey] === v.id) {
+                                      next[slotKey] = "";
+                                    }
+                                  });
+
+                                  next[slot.id] = v.id;
+                                  return next;
+                                });
+
                                 setBerthSearch((prev) => ({
                                   ...prev,
                                   [slot.id]: v.name,
@@ -624,14 +641,13 @@ export default function Component() {
                 </div>
 
                 <div className="space-y-2 text-[11px] leading-relaxed text-gray-800">
-                  <p>
-                    Prezados,
-                  </p>
+                  <p>Prezados,</p>
                   <p>
                     Após a análise das condições meteoceanográficas vigentes e da aplicação dos
                     limites operacionais previstos para as manobras no Porto de Imbetiba, informamos
-                    que a operação solicitada para a embarcação <strong>{noteContext.vessel.name}</strong>,
-                    posicionada em <strong>{noteContext.slot.label}</strong>, foi classificada como
+                    que a operação solicitada para a embarcação{" "}
+                    <strong>{noteContext.vessel.name}</strong>, posicionada em{" "}
+                    <strong>{noteContext.slot.label}</strong>, foi classificada como
                     <strong> NO-GO</strong> no momento da avaliação.
                   </p>
                   <p>
@@ -704,7 +720,7 @@ export default function Component() {
                 </button>
                 <button
                   type="button"
-                  onClick={saveToGitHub}
+                  onClick={() => saveToGitHub()}
                   className="rounded-md border px-2 py-1 text-[10px]"
                 >
                   Salvar no GitHub
@@ -774,6 +790,26 @@ export default function Component() {
                           >
                             Usar no GO/NO-GO
                           </button>
+
+                          {/* 🔧 NOVO BOTÃO EDITAR */}
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setEditVessel({
+                                id: v.id,
+                                name: v.name || "",
+                                category: v.category || "A",
+                                loa: v.loa ?? "",
+                                draft: v.draft ?? "",
+                                beam: v.beam ?? "",
+                              });
+                              setShowEditModal(true);
+                            }}
+                            className="rounded-md border px-2 py-1 text-[10px] text-blue-700"
+                          >
+                            Editar
+                          </button>
+
                           <button
                             type="button"
                             onClick={() => removeVessel(v.id)}
@@ -923,9 +959,169 @@ export default function Component() {
               </div>
             </div>
           )}
+
+          {/* 🔧 Popup de Editar Embarcação */}
+          {showEditModal && editVessel && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+              <div className="w-[min(420px,95vw)] rounded-2xl bg-white p-4 shadow-xl space-y-3">
+                <div className="flex items-center justify-between mb-1">
+                  <h3 className="text-sm font-semibold">
+                    Editar embarcação — {editVessel.name}
+                  </h3>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowEditModal(false);
+                      setEditVessel(null);
+                    }}
+                    className="rounded-md border px-2 py-1 text-[11px]"
+                  >
+                    Fechar
+                  </button>
+                </div>
+                <p className="text-[11px] text-gray-500">
+                  Ajuste os dados da embarcação e clique em{" "}
+                  <strong>Salvar alterações</strong>. As mudanças serão gravadas e enviadas
+                  automaticamente para o GitHub.
+                </p>
+
+                <div className="space-y-2 text-sm">
+                  <div>
+                    <label className="text-xs text-gray-600">Nome</label>
+                    <input
+                      value={editVessel.name}
+                      onChange={(e) =>
+                        setEditVessel((prev) => ({ ...prev, name: e.target.value }))
+                      }
+                      className="mt-1 w-full border rounded-lg p-2 text-sm"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="text-xs text-gray-600">Categoria</label>
+                      <select
+                        value={editVessel.category}
+                        onChange={(e) =>
+                          setEditVessel((prev) => ({
+                            ...prev,
+                            category: e.target.value,
+                          }))
+                        }
+                        className="mt-1 w-full border rounded-lg p-2 text-sm"
+                      >
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="Tanque">Tanque</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2">
+                    <div>
+                      <label className="text-xs text-gray-600">LOA (m)</label>
+                      <input
+                        type="number"
+                        step="0.1"
+                        value={editVessel.loa}
+                        onChange={(e) =>
+                          setEditVessel((prev) => ({
+                            ...prev,
+                            loa: e.target.value,
+                          }))
+                        }
+                        className="mt-1 w-full border rounded-lg p-2 text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs text-gray-600">Calado (m)</label>
+                      <input
+                        type="number"
+                        step="0.1"
+                        value={editVessel.draft}
+                        onChange={(e) =>
+                          setEditVessel((prev) => ({
+                            ...prev,
+                            draft: e.target.value,
+                          }))
+                        }
+                        className="mt-1 w-full border rounded-lg p-2 text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs text-gray-600">Boca (m)</label>
+                      <input
+                        type="number"
+                        step="0.1"
+                        value={editVessel.beam}
+                        onChange={(e) =>
+                          setEditVessel((prev) => ({
+                            ...prev,
+                            beam: e.target.value,
+                          }))
+                        }
+                        className="mt-1 w-full border rounded-lg p-2 text-sm"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-end gap-2 pt-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowEditModal(false);
+                      setEditVessel(null);
+                    }}
+                    className="rounded-md border px-3 py-1.5 text-xs"
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    type="button"
+                    onClick={async () => {
+                      if (!editVessel || !editVessel.id) return;
+
+                      const updatedList = vesselDB.map((v) =>
+                        v.id === editVessel.id
+                          ? {
+                              ...v,
+                              name: editVessel.name.trim(),
+                              category: editVessel.category,
+                              loa:
+                                editVessel.loa !== "" && editVessel.loa !== null
+                                  ? Number(editVessel.loa)
+                                  : undefined,
+                              draft:
+                                editVessel.draft !== "" && editVessel.draft !== null
+                                  ? Number(editVessel.draft)
+                                  : undefined,
+                              beam:
+                                editVessel.beam !== "" && editVessel.beam !== null
+                                  ? Number(editVessel.beam)
+                                  : undefined,
+                            }
+                          : v
+                      );
+
+                      setVesselDB(updatedList);
+                      setShowEditModal(false);
+                      setEditVessel(null);
+
+                      // Salva imediatamente no GitHub com a lista já atualizada
+                      await saveToGitHub(updatedList);
+                    }}
+                    className="rounded-md border px-3 py-1.5 text-xs bg-black text-white"
+                  >
+                    Salvar alterações
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </section>
       )}
     </div>
   );
 }
-
