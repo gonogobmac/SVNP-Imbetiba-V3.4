@@ -3,113 +3,113 @@
     "id": "mierrporaoff",
     "name": "BRAM ATLAS",
     "category": "A",
-    "loa": 960.0,
-    "draft": 720.0,
-    "beam": 260.0
+    "loa": 960,
+    "draft": 720,
+    "beam": 260
   },
   {
     "id": "mierrpos88gc",
     "name": "BRAM POWER",
     "category": "A",
-    "loa": 94.0,
+    "loa": 94,
     "draft": 7.1,
-    "beam": 22.0
+    "beam": 22
   },
   {
     "id": "mierrpotegzl",
     "name": "BRAM TITAN",
     "category": "A",
-    "loa": 96.0,
+    "loa": 96,
     "draft": 7.8,
-    "beam": 27.0
+    "beam": 27
   },
   {
     "id": "mierrpou5jnq",
     "name": "CBO WAVE",
     "category": "A",
-    "loa": 98.0,
+    "loa": 98,
     "draft": 6.6,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpovv3eg",
     "name": "SKANDI AMAZONAS",
     "category": "A",
-    "loa": 95.0,
-    "draft": 8.0,
-    "beam": 24.0
+    "loa": 95,
+    "draft": 8,
+    "beam": 24
   },
   {
     "id": "mierrpowfq9",
     "name": "SKANDI ANGRA",
     "category": "A",
-    "loa": 94.0,
+    "loa": 94,
     "draft": 7.9,
-    "beam": 22.0
+    "beam": 22
   },
   {
     "id": "mierrpox7g35",
     "name": "SKANDI IGUAÇU",
     "category": "A",
-    "loa": 95.0,
+    "loa": 95,
     "draft": 8.1,
-    "beam": 24.0
+    "beam": 24
   },
   {
     "id": "mierrpoytaq3",
     "name": "SKANDI PARATY",
     "category": "A",
-    "loa": 94.0,
+    "loa": 94,
     "draft": 7.9,
-    "beam": 22.0
+    "beam": 22
   },
   {
     "id": "mierrpozqfty",
     "name": "SKANDI Santos (AKOFS SANTOS)",
     "category": "A",
-    "loa": 121.0,
+    "loa": 121,
     "draft": 6.8,
-    "beam": 23.0
+    "beam": 23
   },
   {
     "id": "mierrpp0njsf",
     "name": "SKANDI URCA",
     "category": "A",
-    "loa": 94.0,
+    "loa": 94,
     "draft": 7.8,
-    "beam": 22.0
+    "beam": 22
   },
   {
     "id": "mierrpp1544g",
     "name": "SKANDI VITORIA",
     "category": "A",
-    "loa": 142.0,
+    "loa": 142,
     "draft": 7.7,
-    "beam": 27.0
+    "beam": 27
   },
   {
     "id": "mierrpp3q3uw",
     "name": "STIM STAR BRASIL",
     "category": "A",
-    "loa": 95.0,
-    "draft": 6.0,
-    "beam": 20.0
+    "loa": 95,
+    "draft": 6,
+    "beam": 20
   },
   {
     "id": "mierrpp4kugm",
     "name": "A. H. CAMOGLI",
     "category": "B",
-    "loa": 76.0,
+    "loa": 76,
     "draft": 6.8,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpp5efpr",
     "name": "A. H. GIORGIO P.",
     "category": "B",
-    "loa": 74.0,
+    "loa": 74,
     "draft": 6.8,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpp69rcq",
@@ -117,463 +117,463 @@
     "category": "B",
     "loa": 76.25,
     "draft": 6.8,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpp7xu9h",
     "name": "A. H. VARAZZE",
     "category": "B",
-    "loa": 80.0,
+    "loa": 80,
     "draft": 7.8,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpp8o4hk",
     "name": "ALCATRAZ",
     "category": "B",
-    "loa": 89.0,
+    "loa": 89,
     "draft": 6.2,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpp9d71g",
     "name": "ASSO TRENTA",
     "category": "B",
-    "loa": 77.0,
-    "draft": 6.0,
-    "beam": 16.0
+    "loa": 77,
+    "draft": 6,
+    "beam": 16
   },
   {
     "id": "mierrppanky8",
     "name": "ASSO TRENTUNO",
     "category": "B",
-    "loa": 80.0,
+    "loa": 80,
     "draft": 6.8,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrppb63fh",
     "name": "BATUIRA",
     "category": "B",
-    "loa": 87.0,
+    "loa": 87,
     "draft": 6.2,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrppce4",
     "name": "BLUE MARLIN",
     "category": "B",
-    "loa": 85.0,
+    "loa": 85,
     "draft": 4.5,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrppdt66j",
     "name": "BONGO",
     "category": "B",
-    "loa": 93.0,
-    "draft": 6.0,
-    "beam": 19.0
+    "loa": 93,
+    "draft": 6,
+    "beam": 19
   },
   {
     "id": "mierrppewzta",
     "name": "BRAM BAHIA",
     "category": "B",
-    "loa": 93.0,
-    "draft": 5.0,
-    "beam": 18.0
+    "loa": 93,
+    "draft": 5,
+    "beam": 18
   },
   {
     "id": "mierrppfqzcl",
     "name": "BRAM BELEM",
     "category": "B",
-    "loa": 93.0,
+    "loa": 93,
     "draft": 4.3,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrppga6ay",
     "name": "BRAM BOA VISTA",
     "category": "B",
-    "loa": 93.0,
-    "draft": 6.0,
-    "beam": 18.0
+    "loa": 93,
+    "draft": 6,
+    "beam": 18
   },
   {
     "id": "mierrpph1d1r",
     "name": "BRAM BRASIL",
     "category": "B",
-    "loa": 93.0,
+    "loa": 93,
     "draft": 5.7,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrppir3ys",
     "name": "BRAM BRASILIA",
     "category": "B",
-    "loa": 93.0,
-    "draft": 5.0,
-    "beam": 18.0
+    "loa": 93,
+    "draft": 5,
+    "beam": 18
   },
   {
     "id": "mierrppj40zy",
     "name": "BRAM BRAVO",
     "category": "B",
-    "loa": 93.0,
-    "draft": 5.0,
-    "beam": 18.0
+    "loa": 93,
+    "draft": 5,
+    "beam": 18
   },
   {
     "id": "mierrppkc303",
     "name": "BRAM BREEZE",
     "category": "B",
-    "loa": 93.0,
+    "loa": 93,
     "draft": 5.5,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrppl3tek",
     "name": "BRAM BUCK",
     "category": "B",
-    "loa": 93.0,
+    "loa": 93,
     "draft": 5.8,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrppm4wdf",
     "name": "BRAM BUZIOS",
     "category": "B",
-    "loa": 93.0,
-    "draft": 6.0,
-    "beam": 18.0
+    "loa": 93,
+    "draft": 6,
+    "beam": 18
   },
   {
     "id": "mierrppn7rwr",
     "name": "BRAM HERO",
     "category": "B",
-    "loa": 93.0,
+    "loa": 93,
     "draft": 6.2,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrppoagg7",
     "name": "BRAM SPIRIT",
     "category": "B",
-    "loa": 94.0,
+    "loa": 94,
     "draft": 5.9,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpppe915",
     "name": "BRAVANTE I",
     "category": "B",
-    "loa": 88.0,
-    "draft": 5.0,
-    "beam": 19.0
+    "loa": 88,
+    "draft": 5,
+    "beam": 19
   },
   {
     "id": "mierrppqh2h4",
     "name": "BRAVANTE II",
     "category": "B",
-    "loa": 88.0,
-    "draft": 5.0,
-    "beam": 19.0
+    "loa": 88,
+    "draft": 5,
+    "beam": 19
   },
   {
     "id": "mierrpprlks4",
     "name": "BRUCE KAY",
     "category": "B",
-    "loa": 93.0,
-    "draft": 5.0,
-    "beam": 18.0
+    "loa": 93,
+    "draft": 5,
+    "beam": 18
   },
   {
     "id": "mierrppsdvkf",
     "name": "CAMPOS CAPTAIN",
     "category": "B",
-    "loa": 85.0,
-    "draft": 5.0,
-    "beam": 18.0
+    "loa": 85,
+    "draft": 5,
+    "beam": 18
   },
   {
     "id": "mierrpptos7d",
     "name": "CAMPOS CARRIER",
     "category": "B",
-    "loa": 85.0,
-    "draft": 5.0,
-    "beam": 18.0
+    "loa": 85,
+    "draft": 5,
+    "beam": 18
   },
   {
     "id": "mierrppukjrn",
     "name": "CAMPOS CLIPPER",
     "category": "B",
-    "loa": 79.0,
-    "draft": 4.0,
-    "beam": 17.0
+    "loa": 79,
+    "draft": 4,
+    "beam": 17
   },
   {
     "id": "mierrppvn5hp",
     "name": "CAMPOS COMMANDER",
     "category": "B",
-    "loa": 85.0,
-    "draft": 4.0,
-    "beam": 18.0
+    "loa": 85,
+    "draft": 4,
+    "beam": 18
   },
   {
     "id": "mierrppwq55d",
     "name": "CBO ALESSANDRA",
     "category": "B",
-    "loa": 77.0,
+    "loa": 77,
     "draft": 5.9,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrppxnexo",
     "name": "CBO ALIANÇA",
     "category": "B",
-    "loa": 89.0,
-    "draft": 5.0,
-    "beam": 19.0
+    "loa": 89,
+    "draft": 5,
+    "beam": 19
   },
   {
     "id": "mierrppyr339",
     "name": "CBO ARPOADOR",
     "category": "B",
-    "loa": 89.0,
+    "loa": 89,
     "draft": 6.5,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrppzmh8p",
     "name": "CBO ATLANTICO",
     "category": "B",
-    "loa": 75.0,
+    "loa": 75,
     "draft": 5.9,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpq03szc",
     "name": "CBO BOSSA NOVA",
     "category": "B",
-    "loa": 82.0,
-    "draft": 7.0,
-    "beam": 20.0
+    "loa": 82,
+    "draft": 7,
+    "beam": 20
   },
   {
     "id": "mierrpq1j4cf",
     "name": "CBO CABRALIA",
     "category": "B",
-    "loa": 82.0,
+    "loa": 82,
     "draft": 7.2,
-    "beam": 20.0
+    "beam": 20
   },
   {
     "id": "mierrpq2tnf9",
     "name": "CBO CAROLINA",
     "category": "B",
-    "loa": 77.0,
-    "draft": 6.0,
-    "beam": 17.0
+    "loa": 77,
+    "draft": 6,
+    "beam": 17
   },
   {
     "id": "mierrpq3jtpn",
     "name": "CBO COPACABANA",
     "category": "B",
-    "loa": 89.0,
+    "loa": 89,
     "draft": 6.5,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpq4d5o",
     "name": "CBO FLAMENGO",
     "category": "B",
-    "loa": 89.0,
+    "loa": 89,
     "draft": 6.5,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpq5buox",
     "name": "CBO GUANABARA",
     "category": "B",
-    "loa": 78.0,
+    "loa": 78,
     "draft": 5.9,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpq659kh",
     "name": "CBO IGUAÇU",
     "category": "B",
-    "loa": 82.0,
-    "draft": 7.0,
-    "beam": 20.0
+    "loa": 82,
+    "draft": 7,
+    "beam": 20
   },
   {
     "id": "mierrpq77cel",
     "name": "CBO IPANEMA",
     "category": "B",
-    "loa": 89.0,
+    "loa": 89,
     "draft": 6.5,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpq8ghdc",
     "name": "CBO ISABELLA",
     "category": "B",
-    "loa": 77.0,
+    "loa": 77,
     "draft": 5.9,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpq9ie0l",
     "name": "CBO MANOELLA",
     "category": "B",
-    "loa": 77.0,
+    "loa": 77,
     "draft": 5.9,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpqa4djv",
     "name": "CBO PACIFICO",
     "category": "B",
-    "loa": 75.0,
+    "loa": 75,
     "draft": 6.3,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpqbzrhs",
     "name": "CBO PARINTINS",
     "category": "B",
-    "loa": 82.0,
-    "draft": 7.0,
-    "beam": 20.0
+    "loa": 82,
+    "draft": 7,
+    "beam": 20
   },
   {
     "id": "mierrpqcnjhj",
     "name": "CBO RENATA",
     "category": "B",
-    "loa": 77.0,
+    "loa": 77,
     "draft": 5.9,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpqd8frs",
     "name": "CBO TERRA BRASILIS",
     "category": "B",
-    "loa": 82.0,
+    "loa": 82,
     "draft": 6.5,
-    "beam": 20.0
+    "beam": 20
   },
   {
     "id": "mierrpqevrrm",
     "name": "CBO VALENTINA",
     "category": "B",
-    "loa": 74.0,
+    "loa": 74,
     "draft": 6.3,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpqfzhm6",
     "name": "CBO XAVANTES",
     "category": "B",
-    "loa": 82.0,
-    "draft": 7.0,
-    "beam": 20.0
+    "loa": 82,
+    "draft": 7,
+    "beam": 20
   },
   {
     "id": "mierrpqgbj0",
     "name": "CE LABORDE JR",
     "category": "B",
-    "loa": 86.0,
+    "loa": 86,
     "draft": 6.8,
-    "beam": 21.0
+    "beam": 21
   },
   {
     "id": "mierrpqhvdeo",
     "name": "CMM GRAVITY",
     "category": "B",
-    "loa": 80.0,
+    "loa": 80,
     "draft": 5.5,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpqixhph",
     "name": "COXON TIDE",
     "category": "B",
-    "loa": 75.0,
+    "loa": 75,
     "draft": null,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpqjd83t",
     "name": "DEBORAH KAY",
     "category": "B",
-    "loa": 85.0,
+    "loa": 85,
     "draft": null,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpqkcj7p",
     "name": "GEONISIO BARROSO",
     "category": "B",
-    "loa": 76.0,
+    "loa": 76,
     "draft": 6.6,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpqlr6gz",
     "name": "GH EXPLORER",
     "category": "B",
-    "loa": 77.0,
+    "loa": 77,
     "draft": null,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpqm12qc",
     "name": "GNL 1001",
     "category": "B",
-    "loa": 94.0,
+    "loa": 94,
     "draft": null,
-    "beam": 20.0
+    "beam": 20
   },
   {
     "id": "mierrpqnpbp0",
     "name": "GNL 1008",
     "category": "B",
-    "loa": 94.0,
+    "loa": 94,
     "draft": null,
-    "beam": 20.0
+    "beam": 20
   },
   {
     "id": "mierrpqo9kit",
     "name": "HAROLDO RAMOS",
     "category": "B",
-    "loa": 78.0,
+    "loa": 78,
     "draft": 6.6,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpqpr7eo",
     "name": "HAVILA FAVOUR",
     "category": "B",
-    "loa": 83.0,
+    "loa": 83,
     "draft": null,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpqql9ib",
     "name": "LARUS",
     "category": "B",
-    "loa": 85.0,
+    "loa": 85,
     "draft": null,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpqryd3y",
     "name": "MAERSK BLAZER",
     "category": "B",
-    "loa": 85.0,
+    "loa": 85,
     "draft": null,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpqsrwv2",
@@ -581,7 +581,7 @@
     "category": "A",
     "loa": 90.3,
     "draft": 6.8,
-    "beam": 23.0
+    "beam": 23
   },
   {
     "id": "mierrpqttkm4",
@@ -589,127 +589,127 @@
     "category": "A",
     "loa": 90.3,
     "draft": 6.7,
-    "beam": 23.0
+    "beam": 23
   },
   {
     "id": "mierrpqu6vqy",
     "name": "MAERSK LEADER",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.7,
-    "beam": 23.0
+    "beam": 23
   },
   {
     "id": "mierrpqvino5",
     "name": "MAERSK TRAVELLER",
     "category": "B",
-    "loa": 73.0,
-    "draft": 6.0,
-    "beam": 20.0
+    "loa": 73,
+    "draft": 6,
+    "beam": 20
   },
   {
     "id": "mierrpqwberq",
     "name": "MARIDIVE 601",
     "category": "B",
-    "loa": 76.0,
-    "draft": 5.0,
-    "beam": 18.0
+    "loa": 76,
+    "draft": 5,
+    "beam": 18
   },
   {
     "id": "mierrpqxux9i",
     "name": "MR ALDO",
     "category": "B",
-    "loa": 93.0,
+    "loa": 93,
     "draft": 5.6,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpqyp946",
     "name": "MR CHAFIC",
     "category": "B",
-    "loa": 80.0,
+    "loa": 80,
     "draft": 6.6,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpqzskuq",
     "name": "NAVEGANTES PRIDE",
     "category": "B",
-    "loa": 79.0,
-    "draft": 4.0,
-    "beam": 17.0
+    "loa": 79,
+    "draft": 4,
+    "beam": 17
   },
   {
     "id": "mierrpr0xurk",
     "name": "NORMAND MASTER",
     "category": "B",
-    "loa": 82.0,
+    "loa": 82,
     "draft": 7.5,
-    "beam": 20.0
+    "beam": 20
   },
   {
     "id": "mierrpr1bpog",
     "name": "NORMAND POSEIDON",
     "category": "B",
-    "loa": 94.0,
+    "loa": 94,
     "draft": 6.3,
-    "beam": 20.0
+    "beam": 20
   },
   {
     "id": "mierrpr2wg2a",
     "name": "NORMAND SAGARIS",
     "category": "B",
-    "loa": 87.0,
-    "draft": 8.0,
-    "beam": 21.0
+    "loa": 87,
+    "draft": 8,
+    "beam": 21
   },
   {
     "id": "mierrpr3d9v3",
     "name": "NORMAND STATESMAN",
     "category": "B",
-    "loa": 87.0,
+    "loa": 87,
     "draft": 7.8,
-    "beam": 21.0
+    "beam": 21
   },
   {
     "id": "mierrpr43qnx",
     "name": "NORMAND TOPÁZIO",
     "category": "B",
-    "loa": 78.0,
+    "loa": 78,
     "draft": null,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpr5icll",
     "name": "NORMAND TURQUESA",
     "category": "B",
-    "loa": 80.0,
+    "loa": 80,
     "draft": 6.6,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpr6cxjj",
     "name": "OLIN CONQUEROR",
     "category": "B",
-    "loa": 75.0,
+    "loa": 75,
     "draft": 5.2,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpr7uh0b",
     "name": "OSTREIRO",
     "category": "B",
-    "loa": 76.0,
+    "loa": 76,
     "draft": null,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpr8c7s6",
     "name": "PARCEL DAS PAREDES",
     "category": "B",
-    "loa": 81.0,
+    "loa": 81,
     "draft": null,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpr9pkga",
@@ -723,385 +723,385 @@
     "id": "mierrpra77pi",
     "name": "PINGUIM",
     "category": "B",
-    "loa": 85.0,
+    "loa": 85,
     "draft": null,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrprb24ao",
     "name": "PRION",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrprcv0lq",
     "name": "ROCHEDO DE SÃO PAULO",
     "category": "B",
-    "loa": 75.0,
+    "loa": 75,
     "draft": null,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrprdm1kj",
     "name": "ROCHEDO DE SÃO PEDRO",
     "category": "B",
-    "loa": 75.0,
+    "loa": 75,
     "draft": null,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrprewcem",
     "name": "SANTOS SAILOR",
     "category": "B",
-    "loa": 85.0,
-    "draft": 5.0,
-    "beam": 18.0
+    "loa": 85,
+    "draft": 5,
+    "beam": 18
   },
   {
     "id": "mierrprf78m",
     "name": "SANTOS SUPPLIER",
     "category": "B",
-    "loa": 85.0,
-    "draft": 5.0,
-    "beam": 18.0
+    "loa": 85,
+    "draft": 5,
+    "beam": 18
   },
   {
     "id": "mierrprgkcu0",
     "name": "SANTOS SUPPORTER",
     "category": "B",
-    "loa": 85.0,
-    "draft": 5.0,
-    "beam": 18.0
+    "loa": 85,
+    "draft": 5,
+    "beam": 18
   },
   {
     "id": "mierrprhxecn",
     "name": "SEA BRASIL (N. Carioca)",
     "category": "B",
-    "loa": 88.0,
+    "loa": 88,
     "draft": null,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrprisley",
     "name": "SIEM ATLAS",
     "category": "B",
-    "loa": 88.0,
+    "loa": 88,
     "draft": 6.6,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrprj56rj",
     "name": "SIEM GIANT",
     "category": "B",
-    "loa": 88.0,
+    "loa": 88,
     "draft": 6.6,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrprk9tr4",
     "name": "SIEM SUPPLIER",
     "category": "B",
-    "loa": 84.0,
+    "loa": 84,
     "draft": null,
-    "beam": 20.0
+    "beam": 20
   },
   {
     "id": "mierrprli6zo",
     "name": "SKANDI BOTAFOGO",
     "category": "B",
-    "loa": 80.0,
+    "loa": 80,
     "draft": 6.6,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrprm2r5p",
     "name": "SKANDI FLUMINENSE",
     "category": "B",
-    "loa": 80.0,
+    "loa": 80,
     "draft": 6.6,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrprn68e1",
     "name": "SKANDI RIO",
     "category": "B",
-    "loa": 80.0,
+    "loa": 80,
     "draft": 6.9,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpro90zd",
     "name": "STARNAV ANDROMEDA",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrprpq21g",
     "name": "STARNAV AQUARIUS",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrprrgzgb",
     "name": "STARNAV AQUILA",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrprsct2t",
     "name": "STARNAV CENTAURUS",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrprtynp2",
     "name": "STARNAV CEPHEUS",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpru1x8m",
     "name": "STARNAV CIRCINUS",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrprviv8m",
     "name": "STARNAV CYGNUS",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrprwzv2a",
     "name": "STARNAV DELPHINUS",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrprxgd06",
     "name": "STARNAV HYDRA",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpryaovc",
     "name": "STARNAV PERSEUS",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrprzqsv8",
     "name": "STARNAV PHOENIX",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrps09xkk",
     "name": "STARNAV REGULUS",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrps1j24f",
     "name": "STARNAV SCORPIUS",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrps2cvm6",
     "name": "STARNAV TAURUS",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrps3lwyt",
     "name": "STARNAV URSUS",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.3,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrps4i8nc",
     "name": "STERNA",
     "category": "B",
-    "loa": 87.0,
+    "loa": 87,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrps5kw77",
     "name": "TAGAZ",
     "category": "B",
-    "loa": 87.0,
+    "loa": 87,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrps6tmip",
     "name": "TALHA MAR",
     "category": "B",
-    "loa": 87.0,
+    "loa": 87,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrps78npf",
     "name": "THOR SUPPLIER",
     "category": "B",
-    "loa": 85.0,
+    "loa": 85,
     "draft": null,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrps86zr8",
     "name": "TORDA",
     "category": "B",
-    "loa": 87.0,
+    "loa": 87,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrps9ugu9",
     "name": "UP OPAL",
     "category": "B",
-    "loa": 87.0,
+    "loa": 87,
     "draft": null,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpsa775z",
     "name": "UP RUBI",
     "category": "B",
-    "loa": 85.0,
+    "loa": 85,
     "draft": null,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpsbw56c",
     "name": "UP SAFIRA",
     "category": "B",
-    "loa": 85.0,
+    "loa": 85,
     "draft": null,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpscvb9s",
     "name": "VIKING THAUMAS",
     "category": "B",
-    "loa": 73.0,
-    "draft": 5.0,
-    "beam": 17.0
+    "loa": 73,
+    "draft": 5,
+    "beam": 17
   },
   {
     "id": "mierrpsdiz9l",
     "name": "WILLIAM C O MALLEY",
     "category": "B",
-    "loa": 86.0,
+    "loa": 86,
     "draft": 6.8,
-    "beam": 21.0
+    "beam": 21
   },
   {
     "id": "mierrpsexbqk",
     "name": "WORLD SAPPHIRE",
     "category": "B",
-    "loa": 80.0,
+    "loa": 80,
     "draft": null,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpsf6liz",
     "name": "YVAN BARRETO",
     "category": "B",
-    "loa": 76.0,
+    "loa": 76,
     "draft": null,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpsg6rir",
     "name": "ZARAPITO",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpshbeir",
     "name": "ALFANAVE CABO FRIO",
     "category": "C",
-    "loa": 72.0,
-    "draft": 5.0,
-    "beam": 16.0
+    "loa": 72,
+    "draft": 5,
+    "beam": 16
   },
   {
     "id": "mierrpsii0ve",
     "name": "ASSO VENTICINQUE",
     "category": "B",
-    "loa": 72.0,
+    "loa": 72,
     "draft": 5.8,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpsjmram",
     "name": "ASSO VENTINOVE",
     "category": "B",
-    "loa": 69.0,
+    "loa": 69,
     "draft": 6.1,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpskv46m",
     "name": "ASSO VENTISEI",
     "category": "B",
-    "loa": 72.0,
-    "draft": 5.0,
-    "beam": 16.0
+    "loa": 72,
+    "draft": 5,
+    "beam": 16
   },
   {
     "id": "mierrpslslgj",
     "name": "ASSO VENTISETTE",
     "category": "B",
-    "loa": 71.0,
-    "draft": 5.0,
-    "beam": 16.0
+    "loa": 71,
+    "draft": 5,
+    "beam": 16
   },
   {
     "id": "mierrpsmmfc2",
     "name": "ASSO VENTOTTO",
     "category": "B",
-    "loa": 69.0,
+    "loa": 69,
     "draft": 6.1,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpsne1ci",
@@ -1109,407 +1109,407 @@
     "category": "B",
     "loa": 71.85,
     "draft": 4.8,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpso1vmz",
     "name": "BS UBATUBA",
     "category": "C",
-    "loa": 48.0,
-    "draft": 3.0,
-    "beam": 9.0
+    "loa": 48,
+    "draft": 3,
+    "beam": 9
   },
   {
     "id": "mierrpspycgs",
     "name": "C AÇU",
     "category": "C",
-    "loa": 31.0,
-    "draft": 3.0,
-    "beam": 11.0
+    "loa": 31,
+    "draft": 3,
+    "beam": 11
   },
   {
     "id": "mierrpsqnuo0",
     "name": "C MACAE",
     "category": "C",
-    "loa": 29.0,
-    "draft": 3.0,
-    "beam": 9.0
+    "loa": 29,
+    "draft": 3,
+    "beam": 9
   },
   {
     "id": "mierrpsreouy",
     "name": "C MACEIO",
     "category": "C",
-    "loa": 30.0,
-    "draft": 3.0,
-    "beam": 10.0
+    "loa": 30,
+    "draft": 3,
+    "beam": 10
   },
   {
     "id": "mierrpssarh7",
     "name": "C SALVADOR",
     "category": "C",
-    "loa": 31.0,
-    "draft": 3.0,
-    "beam": 16.0
+    "loa": 31,
+    "draft": 3,
+    "beam": 16
   },
   {
     "id": "mierrpstm3mj",
     "name": "CBO ANNA GABRIELLA",
     "category": "C",
-    "loa": 71.0,
-    "draft": 5.0,
-    "beam": 16.0
+    "loa": 71,
+    "draft": 5,
+    "beam": 16
   },
   {
     "id": "mierrpsup2t1",
     "name": "CBO RIO",
     "category": "C",
-    "loa": 67.0,
+    "loa": 67,
     "draft": 5.9,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpsveur5",
     "name": "CBO VITORIA",
     "category": "C",
-    "loa": 67.0,
+    "loa": 67,
     "draft": 5.9,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpsw4j",
     "name": "CIDADE OURO PRETO",
     "category": "C",
-    "loa": 42.0,
+    "loa": 42,
     "draft": null,
-    "beam": 9.0
+    "beam": 9
   },
   {
     "id": "mierrpsxyig7",
     "name": "CMM VELOCITY",
     "category": "C",
-    "loa": 54.0,
+    "loa": 54,
     "draft": null,
-    "beam": 9.0
+    "beam": 9
   },
   {
     "id": "mierrpsy6l9d",
     "name": "CORMORAN",
     "category": "C",
-    "loa": 72.0,
+    "loa": 72,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpszd3d9",
     "name": "ED KYLE",
     "category": "C",
-    "loa": 66.0,
-    "draft": 5.0,
-    "beam": 16.0
+    "loa": 66,
+    "draft": 5,
+    "beam": 16
   },
   {
     "id": "mierrpt05fc5",
     "name": "FERNANDO DE NORONHA",
     "category": "C",
-    "loa": 67.0,
+    "loa": 67,
     "draft": null,
-    "beam": 14.0
+    "beam": 14
   },
   {
     "id": "mierrpt1mrpl",
     "name": "FULMAR",
     "category": "C",
-    "loa": 72.0,
-    "draft": 6.0,
-    "beam": 16.0
+    "loa": 72,
+    "draft": 6,
+    "beam": 16
   },
   {
     "id": "mierrpt2x2qp",
     "name": "ILHA DO CABO FRIO",
     "category": "C",
-    "loa": 72.0,
+    "loa": 72,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpt3xvwm",
     "name": "KAREN TIDE II",
     "category": "C",
-    "loa": 53.0,
+    "loa": 53,
     "draft": null,
-    "beam": 10.0
+    "beam": 10
   },
   {
     "id": "mierrpt4euxn",
     "name": "KERI CANDIES",
     "category": "C",
-    "loa": 56.0,
+    "loa": 56,
     "draft": null,
-    "beam": 13.0
+    "beam": 13
   },
   {
     "id": "mierrpt5v6zk",
     "name": "LOCAR XIX",
     "category": "C",
-    "loa": 32.0,
+    "loa": 32,
     "draft": null,
-    "beam": 12.0
+    "beam": 12
   },
   {
     "id": "mierrpt6d399",
     "name": "LOCAR XVII",
     "category": "C",
-    "loa": 32.0,
+    "loa": 32,
     "draft": null,
-    "beam": 11.0
+    "beam": 11
   },
   {
     "id": "mierrpt75brv",
     "name": "LOCAR XVIII",
     "category": "C",
-    "loa": 32.0,
+    "loa": 32,
     "draft": null,
-    "beam": 11.0
+    "beam": 11
   },
   {
     "id": "mierrpt8ihpy",
     "name": "LOCAR XX",
     "category": "C",
-    "loa": 32.0,
+    "loa": 32,
     "draft": null,
-    "beam": 11.0
+    "beam": 11
   },
   {
     "id": "mierrpt9zuh6",
     "name": "LOCAR XXI",
     "category": "C",
-    "loa": 32.0,
+    "loa": 32,
     "draft": null,
-    "beam": 11.0
+    "beam": 11
   },
   {
     "id": "mierrpta9hfw",
     "name": "LOCAR XXII",
     "category": "C",
-    "loa": 32.0,
+    "loa": 32,
     "draft": null,
-    "beam": 11.0
+    "beam": 11
   },
   {
     "id": "mierrptb98bv",
     "name": "MACAÉ",
     "category": "C",
-    "loa": 64.0,
+    "loa": 64,
     "draft": null,
-    "beam": 15.0
+    "beam": 15
   },
   {
     "id": "mierrptc3559",
     "name": "MAERSK CHAMPION",
     "category": "C",
-    "loa": 69.0,
+    "loa": 69,
     "draft": null,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrptdl8k0",
     "name": "MAR LIMPO II",
     "category": "C",
-    "loa": 62.0,
+    "loa": 62,
     "draft": null,
-    "beam": 14.0
+    "beam": 14
   },
   {
     "id": "mierrptefkfv",
     "name": "MAR LIMPO IV",
     "category": "C",
-    "loa": 62.0,
+    "loa": 62,
     "draft": null,
-    "beam": 14.0
+    "beam": 14
   },
   {
     "id": "mierrptf5wb3",
     "name": "MAR LIMPO V",
     "category": "C",
-    "loa": 62.0,
+    "loa": 62,
     "draft": null,
-    "beam": 14.0
+    "beam": 14
   },
   {
     "id": "mierrptg61jl",
     "name": "MAR LIMPO VI",
     "category": "C",
-    "loa": 62.0,
+    "loa": 62,
     "draft": null,
-    "beam": 14.0
+    "beam": 14
   },
   {
     "id": "mierrpth118",
     "name": "MAR LIMPO VII",
     "category": "C",
-    "loa": 62.0,
+    "loa": 62,
     "draft": null,
-    "beam": 14.0
+    "beam": 14
   },
   {
     "id": "mierrptigy2w",
     "name": "MARLIN FLAMENGO",
     "category": "C",
-    "loa": 72.0,
+    "loa": 72,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrptjezl5",
     "name": "MARLIN LEBLON",
     "category": "C",
-    "loa": 72.0,
+    "loa": 72,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrptkulgy",
     "name": "MARLIN STOLMEN",
     "category": "C",
-    "loa": 67.0,
+    "loa": 67,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrptl9w38",
     "name": "MARLIN YARE",
     "category": "C",
-    "loa": 67.0,
+    "loa": 67,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrptm55pk",
     "name": "MILAN TIDE",
     "category": "C",
-    "loa": 72.0,
+    "loa": 72,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrptnfu9w",
     "name": "OLIVIA CANDIES",
     "category": "C",
-    "loa": 62.0,
+    "loa": 62,
     "draft": null,
-    "beam": 13.0
+    "beam": 13
   },
   {
     "id": "mierrptonbhj",
     "name": "SAN ANDRES IV",
     "category": "Tanque",
-    "loa": 88.0,
+    "loa": 88,
     "draft": 5.4,
-    "beam": 15.0
+    "beam": 15
   },
   {
     "id": "mierrptplw54",
     "name": "SAVEiROS ATOBA",
     "category": "C",
-    "loa": 72.0,
+    "loa": 72,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrptqx8pm",
     "name": "SAVEIROS FRAGATA",
     "category": "C",
-    "loa": 72.0,
+    "loa": 72,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrptrc5bd",
     "name": "SAVEIROS PELICANO",
     "category": "C",
-    "loa": 72.0,
+    "loa": 72,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrptspate",
     "name": "SEA JACKAL ( Skoul Melen)",
     "category": "C",
-    "loa": 63.0,
+    "loa": 63,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpttjgp4",
     "name": "SEA STOAT",
     "category": "C",
-    "loa": 63.0,
+    "loa": 63,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrptuc9dv",
     "name": "SEA VIXEN",
     "category": "C",
-    "loa": 63.0,
+    "loa": 63,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrptv3gm",
     "name": "SEABULK ANGRA (I. SSebastião)",
     "category": "C",
-    "loa": 72.0,
-    "draft": 3.0,
-    "beam": 16.0
+    "loa": 72,
+    "draft": 3,
+    "beam": 16
   },
   {
     "id": "mierrptwogje",
     "name": "SEABULK BRASIL (I. CFrio)",
     "category": "C",
-    "loa": 72.0,
-    "draft": 3.0,
-    "beam": 16.0
+    "loa": 72,
+    "draft": 3,
+    "beam": 16
   },
   {
     "id": "mierrptxph96",
     "name": "SINGRAR",
     "category": "C",
-    "loa": 72.0,
+    "loa": 72,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpty64m9",
     "name": "SISTAC VITORIA",
     "category": "C",
-    "loa": 43.0,
+    "loa": 43,
     "draft": null,
-    "beam": 9.0
+    "beam": 9
   },
   {
     "id": "mierrptzdsz5",
     "name": "SKUA",
     "category": "C",
-    "loa": 72.0,
+    "loa": 72,
     "draft": null,
-    "beam": 16.0
+    "beam": 16
   },
   {
     "id": "mierrpu05w1j",
     "name": "STIM STAR ARABIAN GULF",
     "category": "C",
-    "loa": 71.0,
+    "loa": 71,
     "draft": null,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpu17xyk",
     "name": "VEGA CHASER",
     "category": "C",
-    "loa": 59.0,
+    "loa": 59,
     "draft": null,
-    "beam": 15.0
+    "beam": 15
   },
   {
     "id": "mierrpu2qqhn",
@@ -1523,9 +1523,9 @@
     "id": "mierrpu3edpq",
     "name": "VIKING SURF",
     "category": "C",
-    "loa": 70.0,
-    "draft": 4.0,
-    "beam": 17.0
+    "loa": 70,
+    "draft": 4,
+    "beam": 17
   },
   {
     "id": "mierrpu4mptp",
@@ -1539,9 +1539,9 @@
     "id": "mierrpu5z3s4",
     "name": "BELOV MARES",
     "category": "B",
-    "loa": 88.0,
+    "loa": 88,
     "draft": 6.5,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpu67ml1",
@@ -1588,7 +1588,7 @@
     "name": "BARU GORGONA",
     "category": "C",
     "loa": 46.1,
-    "draft": 3.0,
+    "draft": 3,
     "beam": 9.5
   },
   {
@@ -1597,7 +1597,7 @@
     "category": "B",
     "loa": 84.67,
     "draft": 6.34,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpud6qst",
@@ -1613,7 +1613,7 @@
     "category": "B",
     "loa": 88.9,
     "draft": null,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpufp0xp",
@@ -1645,7 +1645,7 @@
     "category": "B",
     "loa": 80.5,
     "draft": 6.59,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpul28vd",
@@ -1667,7 +1667,7 @@
     "id": "mierrpuna9gr",
     "name": "PARDELA",
     "category": "B",
-    "loa": 76.0,
+    "loa": 76,
     "draft": 6.3,
     "beam": 17.6
   },
@@ -1675,17 +1675,17 @@
     "id": "mierrpuoyh8w",
     "name": "BARU ATRIA",
     "category": "C",
-    "loa": 48.0,
-    "draft": 3.0,
+    "loa": 48,
+    "draft": 3,
     "beam": 9.5
   },
   {
     "id": "mierrpup3sux",
     "name": "STARNAV VOLANS",
     "category": "B",
-    "loa": 90.0,
+    "loa": 90,
     "draft": 6.33,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpuqof4p",
@@ -1699,16 +1699,16 @@
     "id": "mierrpurmkt8",
     "name": "TS EXAGERADO",
     "category": "C",
-    "loa": 29.0,
+    "loa": 29,
     "draft": null,
-    "beam": 10.0
+    "beam": 10
   },
   {
     "id": "mierrpusdywc",
     "name": "C-ACCLAIM",
     "category": "C",
     "loa": 57.91,
-    "draft": 5.0,
+    "draft": 5,
     "beam": 13.41
   },
   {
@@ -1747,7 +1747,7 @@
     "id": "mierrpuxra3i",
     "name": "NORMAND VALIANT",
     "category": "B",
-    "loa": 78.0,
+    "loa": 78,
     "draft": null,
     "beam": 20.4
   },
@@ -1771,9 +1771,9 @@
     "id": "mierrpv0tg7y",
     "name": "PAULO CUNHA",
     "category": "B",
-    "loa": 94.0,
+    "loa": 94,
     "draft": 6.41,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpv19f76",
@@ -1821,15 +1821,15 @@
     "category": "A",
     "loa": 102.2,
     "draft": null,
-    "beam": 24.0
+    "beam": 24
   },
   {
     "id": "mierrpv7ggpi",
     "name": "BALSA SUPERPESA VI",
     "category": "B",
-    "loa": 60.0,
+    "loa": 60,
     "draft": null,
-    "beam": 20.0
+    "beam": 20
   },
   {
     "id": "mierrpv83etr",
@@ -1851,8 +1851,8 @@
     "id": "mierrpvakmtn",
     "name": "BARU TESORO",
     "category": "C",
-    "loa": 48.0,
-    "draft": 3.0,
+    "loa": 48,
+    "draft": 3,
     "beam": 9.5
   },
   {
@@ -1861,7 +1861,7 @@
     "category": "C",
     "loa": 67.1,
     "draft": null,
-    "beam": 14.0
+    "beam": 14
   },
   {
     "id": "mierrpvchunz",
@@ -1877,13 +1877,13 @@
     "category": "B",
     "loa": 76.6,
     "draft": 7.6,
-    "beam": 1600.0
+    "beam": 1600
   },
   {
     "id": "mierrpveaegq",
     "name": "MARINA 1",
     "category": "B",
-    "loa": 78.0,
+    "loa": 78,
     "draft": 7.8,
     "beam": 18.6
   },
@@ -1891,7 +1891,7 @@
     "id": "mierrpvfgtlt",
     "name": "BARU PROVIDENCIA",
     "category": "C",
-    "loa": 48.0,
+    "loa": 48,
     "draft": 2.35,
     "beam": 9.5
   },
@@ -1957,7 +1957,7 @@
     "category": "B",
     "loa": 89.1,
     "draft": 7.2,
-    "beam": 22.0
+    "beam": 22
   },
   {
     "id": "mierrpvomxd0",
@@ -1987,17 +1987,17 @@
     "id": "mierrpvro6gg",
     "name": "LOCAR XXIV",
     "category": "C",
-    "loa": 32.0,
+    "loa": 32,
     "draft": null,
-    "beam": 11.0
+    "beam": 11
   },
   {
     "id": "mierrpvs5vcn",
     "name": "PETREL",
     "category": "B",
     "loa": 72.55,
-    "draft": 6.0,
-    "beam": 16.0
+    "draft": 6,
+    "beam": 16
   },
   {
     "id": "mierrpvtgwa4",
@@ -2005,15 +2005,15 @@
     "category": "B",
     "loa": 74.52,
     "draft": null,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpvubavj",
     "name": "CBO CHIARA",
     "category": "B",
-    "loa": 74.0,
-    "draft": 6.0,
-    "beam": 18.0
+    "loa": 74,
+    "draft": 6,
+    "beam": 18
   },
   {
     "id": "mierrpvvw0fc",
@@ -2035,7 +2035,7 @@
     "id": "mierrpvyjm0z",
     "name": "BALSA TS 6",
     "category": "B",
-    "loa": 60.0,
+    "loa": 60,
     "draft": null,
     "beam": 16.5
   },
@@ -2051,17 +2051,17 @@
     "id": "mierrpw06o9j",
     "name": "BALSA SÃO TOMÉ",
     "category": "A",
-    "loa": 72.0,
+    "loa": 72,
     "draft": null,
-    "beam": 25.0
+    "beam": 25
   },
   {
     "id": "mierrpw1a6qt",
     "name": "C VENDAVAL",
     "category": "C",
-    "loa": 30.0,
+    "loa": 30,
     "draft": null,
-    "beam": 11.0
+    "beam": 11
   },
   {
     "id": "mierrpw2ihni",
@@ -2084,8 +2084,8 @@
     "name": "TIGER",
     "category": "B",
     "loa": 79.3,
-    "draft": 5.0,
-    "beam": 16.0
+    "draft": 5,
+    "beam": 16
   },
   {
     "id": "mierrpw5tbuh",
@@ -2099,9 +2099,9 @@
     "id": "mierrpw65s1a",
     "name": "LOCAR LH XXIII",
     "category": "C",
-    "loa": 32.0,
-    "draft": 4.0,
-    "beam": 11.0
+    "loa": 32,
+    "draft": 4,
+    "beam": 11
   },
   {
     "id": "mierrpw7e5jb",
@@ -2117,7 +2117,7 @@
     "category": "B",
     "loa": 69.8,
     "draft": 6.2,
-    "beam": 17.0
+    "beam": 17
   },
   {
     "id": "mierrpw9cjvn",
@@ -2131,9 +2131,9 @@
     "id": "mierrpwa296x",
     "name": "FUGRO VAQUITA",
     "category": "C",
-    "loa": 20.0,
+    "loa": 20,
     "draft": 2.5,
-    "beam": 2.0
+    "beam": 2
   },
   {
     "id": "mierrpwbgycp",
@@ -2157,7 +2157,7 @@
     "category": "B",
     "loa": 88.9,
     "draft": null,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpwewyvl",
@@ -2181,7 +2181,7 @@
     "category": "B",
     "loa": 73.15,
     "draft": null,
-    "beam": 18.0
+    "beam": 18
   },
   {
     "id": "mierrpwh9mer",
@@ -2213,13 +2213,13 @@
     "category": "B",
     "loa": 87.83,
     "draft": 6.6,
-    "beam": 19.0
+    "beam": 19
   },
   {
     "id": "mierrpwmy47m",
     "name": "TS MARRENTO",
     "category": "C",
-    "loa": 29.0,
+    "loa": 29,
     "draft": null,
     "beam": 9.6
   },
@@ -2227,7 +2227,7 @@
     "id": "mierrpwnc062",
     "name": "BALSA TS7",
     "category": "A",
-    "loa": 72.0,
+    "loa": 72,
     "draft": null,
     "beam": 22.5
   },
@@ -2237,6 +2237,6 @@
     "category": "B",
     "loa": 82.3,
     "draft": 5.3,
-    "beam": 17.0
+    "beam": 17
   }
 ]
